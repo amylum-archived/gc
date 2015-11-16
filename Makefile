@@ -38,7 +38,7 @@ deps:
 	mkdir $(LIBATOMIC_OPS_DIR)
 	curl -sLo $(LIBATOMIC_OPS_TAR) $(LIBATOMIC_OPS_URL)
 	tar -x -C $(LIBATOMIC_OPS_DIR) -f $(LIBATOMIC_OPS_TAR)
-	rm -rm $(DEP_DIR)
+	rm -rf $(DEP_DIR)
 	mkdir -p $(DEP_DIR)/usr/include
 	cp -R /usr/include/{linux,asm,asm-generic} $(DEP_DIR)/usr/include/
 
