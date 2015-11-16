@@ -7,7 +7,7 @@ BUILD_DIR = /tmp/$(PACKAGE)-build
 RELEASE_DIR = /tmp/$(PACKAGE)-release
 RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PATH_FLAGS = --prefix=/usr --infodir=/tmp/trash
-CONF_FLAGS = --enable-cplusplus
+CONF_FLAGS = --enable-cplusplus --with-pic
 CFLAGS = -static -static-libgcc -Wl,-static -I$(DEP_DIR)/usr/include
 
 PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/gc//;s/_/./g')
@@ -48,6 +48,7 @@ build: submodule deps
 	cd $(BUILD_DIR) && ./autogen.sh
 	patch -d $(BUILD_DIR) -p1 < patches/noelision.patch
 	patch -d $(BUILD_DIR) -p1 < patches/gc-7.4.2-Export-GC-push-all-eager.patch
+	sed -i 's/#     include <asm\/sigcontext.h>//' $(BUILD_DIR)/os_dep.c
 	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBATOMIC_OPS_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp
