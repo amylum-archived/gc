@@ -12,6 +12,12 @@ PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/gc//;s
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 
+LIBATOMIC_OPS_VERSION = 7.4.2-1
+LIBATOMIC_OPS_URL = https://github.com/amylum/libatomic_ops/releases/download/$(LIBATOMIC_OPS_VERSION)/libatomic_ops.tar.gz
+LIBATOMIC_OPS_TAR = /tmp/libatomic_ops.tar.gz
+LIBATOMIC_OPS_DIR = /tmp/libatomic_ops
+LIBATOMIC_OPS_PATH = -I$(LIBATOMIC_OPS_DIR)/usr/include -L$(LIBATOMIC_OPS_DIR)/usr/lib
+
 .PHONY : default submodule deps manual container deps build version push local
 
 default: submodule container
@@ -33,7 +39,7 @@ build: submodule deps
 	cd $(BUILD_DIR) && ./autogen.sh
 	patch -d $(BUILD_DIR) -p1 < patches/noelision.patch
 	patch -d $(BUILD_DIR) -p1 < patches/gc-7.4.2-Export-GC-push-all-eager.patch
-	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
+	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBATOMIC_OPS_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
