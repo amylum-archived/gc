@@ -5,7 +5,7 @@ BUILD_DIR = /tmp/$(PACKAGE)-build
 RELEASE_DIR = /tmp/$(PACKAGE)-release
 RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PATH_FLAGS = --prefix=/usr --infodir=/tmp/trash
-CONF_FLAGS =
+CONF_FLAGS = --enable-cplusplus
 CFLAGS = -static -static-libgcc -Wl,-static
 
 PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/gc//;s/_/./g')
@@ -32,6 +32,10 @@ container:
 	./meta/launch
 
 deps:
+	rm -rf $(LIBATOMIC_OPS_DIR) $(LIBATOMIC_OPS_TAR)
+	mkdir $(LIBATOMIC_OPS_DIR)
+	curl -sLo $(LIBATOMIC_OPS_TAR) $(LIBATOMIC_OPS_URL)
+	tar -x -C $(LIBATOMIC_OPS_DIR) -f $(LIBATOMIC_OPS_TAR)
 
 build: submodule deps
 	rm -rf $(BUILD_DIR)
