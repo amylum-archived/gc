@@ -31,8 +31,8 @@ build: submodule deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
 	cd $(BUILD_DIR) && ./autogen.sh
-	patch -D$(BUILD_DIR) -p1 < patches/noelision.patch
-	patch -D$(BUILD_DIR) -p1 < patches/gc-7.4.2-Export-GC-push-all-eager.patch
+	patch -d $(BUILD_DIR) -p1 < patches/noelision.patch
+	patch -d $(BUILD_DIR) -p1 < patches/gc-7.4.2-Export-GC-push-all-eager.patch
 	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp
