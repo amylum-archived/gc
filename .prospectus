@@ -1,0 +1,13 @@
+item do
+  expected do
+    url_xpath
+    url 'https://www.archlinux.org/packages/extra/x86_64/gc/'
+    xpath '//*[@id="pkgdetails"]/h2'
+    regex /^gc ([\w.]*)-\d+$/
+  end
+
+  actual do
+    git_tag
+    regex /^(.*)-\d+$/
+  end
+end
