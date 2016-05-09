@@ -8,13 +8,13 @@ RELEASE_DIR = /tmp/$(PACKAGE)-release
 RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PATH_FLAGS = --prefix=/usr --infodir=/tmp/trash
 CONF_FLAGS = --enable-cplusplus --with-pic
-CFLAGS = -static -static-libgcc -Wl,-static -I$(DEP_DIR)/usr/include -DNO_GETCONTEXT
+CFLAGS = -I$(DEP_DIR)/usr/include -DNO_GETCONTEXT
 
 PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/gc//;s/_/./g')
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 
-LIBATOMIC_OPS_VERSION = 7.4.2-1
+LIBATOMIC_OPS_VERSION = 7.4.2-2
 LIBATOMIC_OPS_URL = https://github.com/amylum/libatomic_ops/releases/download/$(LIBATOMIC_OPS_VERSION)/libatomic_ops.tar.gz
 LIBATOMIC_OPS_TAR = /tmp/libatomic_ops.tar.gz
 LIBATOMIC_OPS_DIR = /tmp/libatomic_ops
