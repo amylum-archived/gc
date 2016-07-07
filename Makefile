@@ -14,7 +14,7 @@ PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/gc//;s
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 
-LIBATOMIC_OPS_VERSION = 7.4.2-2
+LIBATOMIC_OPS_VERSION = 7.4.4-3
 LIBATOMIC_OPS_URL = https://github.com/amylum/libatomic_ops/releases/download/$(LIBATOMIC_OPS_VERSION)/libatomic_ops.tar.gz
 LIBATOMIC_OPS_TAR = /tmp/libatomic_ops.tar.gz
 LIBATOMIC_OPS_DIR = /tmp/libatomic_ops
