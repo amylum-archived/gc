@@ -18,7 +18,7 @@ harden
 patch 'license.patch'
 patch 'noelision.patch'
 patch 'gc-7.4.2-Export-GC-push-all-eager.patch'
-patch 'sigcontext.h'
+patch 'sigcontext.patch'
 
 build do
   run './autogen.sh'
