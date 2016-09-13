@@ -1,0 +1,32 @@
+name 'gc'
+org 'amylum'
+
+deps(
+  'libatomic_ops': '7.4.4-3',
+  'linux-api-headers': '4.8-rc4-1'
+)
+
+configure_flags(
+  prefix: '/usr',
+  'enable-cplusplus': nil
+)
+
+cflags
+cflags %w(-DNO_GETCONTEXT)
+harden
+
+patch 'license.patch'
+patch 'noelision.patch'
+patch 'gc-7.4.2-Export-GC-push-all-eager.patch'
+patch 'sigcontext.h'
+
+build do
+  run './autogen.sh'
+  configure
+  make
+  install
+end
+
+test do
+  # TODO: add tests
+end
