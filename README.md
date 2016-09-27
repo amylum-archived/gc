@@ -1,7 +1,7 @@
 gc
 ==========
 
-[![Build Status](https://img.shields.io/circleci/project/amylum/gc.svg)](https://circleci.com/gh/amylum/gc)
+[![Build Status](https://img.shields.io/circleci/project/amylum/gc/master.svg)](https://circleci.com/gh/amylum/gc)
 [![GitHub release](https://img.shields.io/github/release/amylum/gc.svg)](https://github.com/amylum/gc/releases)
 [![GPL Licensed](http://img.shields.io/badge/license-GPL-green.svg)](https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3))
 
