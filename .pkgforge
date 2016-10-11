@@ -16,7 +16,6 @@ cflags %w(-DNO_GETCONTEXT)
 harden
 
 patch 'license.patch'
-patch 'sigcontext.patch'
 
 build do
   run './autogen.sh'
