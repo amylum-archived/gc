@@ -16,7 +16,6 @@ cflags %w(-DNO_GETCONTEXT)
 harden
 
 patch 'license.patch'
-patch 'gc-7.4.2-Export-GC-push-all-eager.patch'
 patch 'sigcontext.patch'
 
 build do
