@@ -1,0 +1,12 @@
+diff --git a/pthread_stop_world.c b/pthread_stop_world.c
+index dad1fdc..d3e7cbe 100644
+--- a/pthread_stop_world.c
++++ b/pthread_stop_world.c
+@@ -45,6 +45,7 @@
+ #include <semaphore.h>
+ #include <errno.h>
+ #include <unistd.h>
++#include <sys/time.h>
+ #include "atomic_ops.h"
+ 
+ /* It's safe to call original pthread_sigmask() here.   */
