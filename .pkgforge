@@ -2,7 +2,7 @@ name 'gc'
 org 'amylum'
 
 deps(
-  'libatomic_ops': '7.4.4-3',
+  'libatomic_ops': '7.4.4-4',
   'linux-api-headers': '4.8-rc6-2'
 )
 
