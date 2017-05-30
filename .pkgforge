@@ -2,8 +2,8 @@ name 'gc'
 org 'amylum'
 
 deps(
-  'libatomic_ops': '7.4.4-4',
-  'linux-api-headers': '4.11-1'
+  'libatomic_ops': '7.4.6-1',
+  'linux-api-headers': '4.11-2'
 )
 
 configure_flags(
