@@ -1,5 +1,7 @@
-Prospectus.extra_dep('file', 'pkgforge')
+Prospectus.extra_dep('file', 'prospectus_circleci')
 Prospectus.extra_dep('file', 'prospectus_pkgforge')
+
+my_slug = 'amylum/gc'
 
 item do
   expected do
@@ -15,4 +17,5 @@ item do
   end
 
   extend ProspectusPkgforge::DepItems
+  extend ProspectusCircleci::Build.new(my_slug)
 end
