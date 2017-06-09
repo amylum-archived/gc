@@ -1,7 +1,8 @@
 Prospectus.extra_dep('file', 'prospectus_circleci')
 Prospectus.extra_dep('file', 'prospectus_pkgforge')
 
-my_slug = 'amylum/gc'
+pkgforge = PkgForge.load_from_file
+my_slug = pkgforge.org + '/' + pkgforge.name
 
 item do
   expected do
