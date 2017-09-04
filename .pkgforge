@@ -7,8 +7,8 @@ deps(
     checksum: '81689a977bd7950537ff59c50c673e3f5b96d8ced8a3507b56c118a589f724dd'
   },
   'linux-api-headers': {
-    version: '4.12-1',
-    checksum: '25d3672456a93cc7f6743d4b2c227ad7a9456f4ec2a9f09ab7f2e9e6cb56aeaa'
+    version: '4.13-1',
+    checksum: '50b2288419fe132c061bdf3d297293011929abc1092ffaa5e523ad6549b4f5fa'
   }
 )
 
