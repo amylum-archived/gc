@@ -3,8 +3,8 @@ org 'amylum'
 
 deps(
   libatomic_ops: {
-    version: '7.6.2-1',
-    checksum: '28a35ae9281d48c9b678971ecf205c13a2176f64d27a3d566589e71c39e28b7c'
+    version: '7.6.4-1',
+    checksum: 'c151dbcec5b1f323c901f26ff9646558b30253c47a46f649e66cd3c403cd2f09'
   },
   'linux-api-headers': {
     version: '4.15-2',
