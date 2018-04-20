@@ -6,7 +6,7 @@ my_slug = pkgforge.org + '/' + pkgforge.name
 
 item do
   expected do
-    github_release
+    github_tag
     repo 'ivmai/bdwgc'
     regex /^v([\d.]+)$/
   end
