@@ -1,4 +1,4 @@
-Prospectus.extra_dep('file', 'prospectus_circleci')
+Prospectus.extra_dep('file', 'prospectus_travis')
 Prospectus.extra_dep('file', 'prospectus_pkgforge')
 
 pkgforge = PkgForge.load_from_file
@@ -17,5 +17,5 @@ item do
   end
 
   extend ProspectusPkgforge::DepItems
-  extend ProspectusCircleci::Build.new(my_slug)
+  extend ProspectusTravis::Build.new(my_slug)
 end
