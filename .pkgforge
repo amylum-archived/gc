@@ -22,7 +22,7 @@ cflags %w(-DNO_GETCONTEXT)
 harden
 
 patch 'license.patch'
-patch 'time-patch.patch'
+
 build do
   run './autogen.sh'
   configure
