@@ -3,12 +3,12 @@ org 'amylum'
 
 deps(
   libatomic_ops: {
-    version: '7.6.6-1',
-    checksum: '54738c5775e699b364596d9a72a76693e4b58b277fe412e3c7b9afd2d1caa3d8'
+    version: '7.6.8-1',
+    checksum: '3de23537b9143da541a6c30d8086913efc06cbf529e2599432bca5a827bc9397'
   },
   'linux-api-headers': {
-    version: '4.19-1',
-    checksum: 'de68cab17c2354ee660b269ccca30e275a9314563ebdfb4f427fc5ebe1395f30'
+    version: '4.20-1',
+    checksum: 'aed037b2b3fb2df77ca19359a20188d39c25d011febf4d3733d251fa87ca9636'
   }
 )
 
